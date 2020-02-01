@@ -118,6 +118,10 @@ methods: {
     Reset () {
         console.log(this.$refs.mySplit.reset())
     }
+    or 
+    Reset () {
+        console.log(this.$refs.mySplit.reset([{size: 20, minSize:50}, {size: 80, minSize:500}]))
+    }
     getSizes () {
         console.log(this.$refs.mySplit.getSizes())
     }

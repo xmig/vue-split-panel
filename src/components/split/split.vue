@@ -29,8 +29,14 @@
         }
     },
     methods: {
-        init () {
+        init(sizes) {
             let self = this;
+            if (typeof sizes !== 'undefined') {
+                sizes.forEach((item, index) => {
+                    self.sizes[index] = item.size
+                    self.minSizes[index] = item.minSize
+                })
+            }
             if (self.instance !== null) {
                 self.instance.destroy()
             }
@@ -64,8 +70,8 @@
             })
             self.init()
         },
-        reset () {
-            this.init()
+        reset (sizes) {
+            this.init(sizes)
         },
         getSizes () {
             return this.instance.getSizes()
